@@ -1,5 +1,5 @@
-import ultralytics
-from ultralytics import YOLO
+# import ultralytics
+# from ultralytics import YOLO
 import os
 import shutil
 import cv2
@@ -11,20 +11,21 @@ def detect_object(image_path,confidences):
         
         # Initialize the YOLO model
         model_path = 'last.pt'
-        model = YOLO(model_path)
+        # model = YOLO(model_path)
 
-        # Perform the prediction
-        results = model.predict(
-            source="splitted_data/"+image_path,
-            conf=0.25,
-            save=True,
-            project="results",
-            name="p1"
-        )
+        # # Perform the prediction
+        # results = model.predict(
+        #     source="splitted_data/"+image_path,
+        #     conf=0.25,
+        #     save=True,
+        #     project="results",
+        #     name="p1"
+        # )
 
         # Display the output image
-        # print(results[0])
-        result_object = results[0]
+        # # print(results[0])
+        # result_object = results[0]
+        result_object = {}
         conf = compute_confidence(result_object,confidences)
 
         # Specify the source file path (the image you want to move)
